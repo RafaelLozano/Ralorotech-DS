@@ -1,0 +1,60 @@
+{
+  "name": "@ralorotech/rl-design-system",
+  "version": "0.1.0",
+  "description": "React + TS Design System (BEM)",
+  "publishConfig": { "access": "public" },
+  "license": "MIT",
+  "author": "Rafael Lozano",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelLozano/Ralorotech-DS.git"
+  },
+  "homepage": "https://github.com/RafaelLozano/Ralorotech-DS#readme",
+  "bugs": { "url": "https://github.com/RafaelLozano/Ralorotech-DS/issues" },
+
+  "files": ["dist", "README.md", "LICENSE"],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "sideEffects": ["**/*.css"],
+
+  "scripts": {
+    "build": "tsup",
+    "build:css": "mkdir -p dist && (cat src/styles/tokens.css 2>/dev/null || true) > dist/styles.css && find src/components -name '*.css' -exec cat {} + >> dist/styles.css",
+    "dev": "tsup --watch",
+    "test": "vitest --config vitest.config.ts --passWithNoTests",
+    "prepublishOnly": "npm run build && npm run build:css && npm test"
+  },
+
+  "keywords": ["react", "design-system", "typescript", "BEM", "ui", "button"],
+
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "jsdom": "^26.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}

@@ -1,0 +1,18 @@
+@import "./tokens.css";
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--rl-font);
+    color: var(--rl-color-fg);
+    background: var(--rl-color-bg);
+}

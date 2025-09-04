@@ -1,0 +1,118 @@
+@import "../../styles/tokens.css";
+
+.rl-Button {
+    --btn-bg: var(--rl-brand-500);
+    --btn-bg-hover: var(--rl-brand-600);
+    --btn-fg: #fff;
+    --btn-border: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--rl-gap, 0.5rem);
+    border: 1px solid var(--btn-border);
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border-radius: var(--rl-radius, 12px);
+    padding: 0.5rem 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: transform .05s ease-in-out, background .15s, border-color .15s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.rl-Button:hover {
+    background: var(--btn-bg-hover);
+}
+
+.rl-Button:active {
+    transform: translateY(1px);
+}
+
+.rl-Button:focus-visible {
+    outline: 2px solid var(--rl-ring, #93c5fd);
+    outline-offset: 2px;
+}
+
+.rl-Button__icon {
+    display: inline-flex;
+    line-height: 0;
+}
+
+.rl-Button__content {
+    display: inline-flex;
+    align-items: center;
+}
+
+.rl-Button__spinner {
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-top-color: #fff;
+    border-radius: 50%;
+    margin-left: .5rem;
+    animation: rl-spin .8s linear infinite;
+}
+
+@keyframes rl-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Variantes */
+.rl-Button--variant-primary {}
+
+.rl-Button--variant-secondary {
+    --btn-bg: #fff;
+    --btn-bg-hover: #f7f7f7;
+    --btn-fg: var(--rl-color-fg, #13151a);
+    --btn-border: var(--rl-border, #e5e7eb);
+}
+
+.rl-Button--variant-ghost {
+    --btn-bg: transparent;
+    --btn-bg-hover: rgba(0, 0, 0, .06);
+    --btn-fg: var(--rl-color-fg, #13151a);
+    --btn-border: transparent;
+}
+
+.rl-Button--variant-danger {
+    --btn-bg: #ef4444;
+    --btn-bg-hover: #dc2626;
+    --btn-fg: #fff;
+}
+
+/* Tamaños */
+.rl-Button--size-sm {
+    padding: .375rem .625rem;
+    font-size: .875rem;
+}
+
+.rl-Button--size-md {
+    padding: .5rem .875rem;
+    font-size: .95rem;
+}
+
+.rl-Button--size-lg {
+    padding: .625rem 1rem;
+    font-size: 1.05rem;
+}
+
+/* Bloque */
+.rl-Button--block {
+    width: 100%;
+}
+
+/* Estados */
+.rl-Button--disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.rl-Button--loading {
+    pointer-events: none;
+}
