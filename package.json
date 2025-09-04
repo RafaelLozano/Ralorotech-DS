@@ -1,6 +1,6 @@
 {
   "name": "@ralorotech/rl-design-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React + TS Design System (BEM)",
   "publishConfig": {
     "access": "public"
