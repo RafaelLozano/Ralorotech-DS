@@ -1,2 +1,63 @@
-"use strict";var v=Object.create;var i=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var y=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,_=Object.prototype.hasOwnProperty;var z=(t,r)=>{for(var n in r)i(t,n,{get:r[n],enumerable:!0})},b=(t,r,n,e)=>{if(r&&typeof r=="object"||typeof r=="function")for(let o of y(r))!_.call(t,o)&&o!==n&&i(t,o,{get:()=>r[o],enumerable:!(e=h(r,o))||e.enumerable});return t};var k=(t,r,n)=>(n=t!=null?v(x(t)):{},b(r||!t||!t.__esModule?i(n,"default",{value:t,enumerable:!0}):n,t)),N=t=>b(i({},"__esModule",{value:!0}),t);var R={};z(R,{Button:()=>u});module.exports=N(R);var d=k(require("react"));var a=require("react/jsx-runtime"),u=d.default.forwardRef(({variant:t="primary",size:r="md",block:n=!1,loading:e=!1,leftIcon:o,rightIcon:l,loadingLabel:p="Loading\u2026",className:f,children:c,disabled:s,...g},m)=>{let B=["rl-Button",`rl-Button--variant-${t}`,`rl-Button--size-${r}`,n&&"rl-Button--block",(s||e)&&"rl-Button--disabled",e&&"rl-Button--loading",f].filter(Boolean).join(" ");return(0,a.jsxs)("button",{ref:m,className:B,disabled:s||e,...g,children:[o&&(0,a.jsx)("span",{className:"rl-Button__icon",children:o}),(0,a.jsx)("span",{className:"rl-Button__content",children:c}),l&&(0,a.jsx)("span",{className:"rl-Button__icon",children:l}),e&&(0,a.jsx)("span",{className:"rl-Button__spinner",role:"status","aria-live":"polite","aria-label":p})]})});u.displayName="Button";0&&(module.exports={Button});
+'use strict';
+
+var React = require('react');
+var jsxRuntime = require('react/jsx-runtime');
+
+function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
+
+var React__default = /*#__PURE__*/_interopDefault(React);
+
+// src/components/Button/Button.tsx
+var Button = React__default.default.forwardRef(
+  ({
+    variant = "primary",
+    size = "md",
+    block = false,
+    loading = false,
+    leftIcon,
+    rightIcon,
+    loadingLabel = "Loading\u2026",
+    className,
+    children,
+    disabled,
+    ...rest
+  }, ref) => {
+    const classes = [
+      "rl-Button",
+      `rl-Button--variant-${variant}`,
+      `rl-Button--size-${size}`,
+      block && "rl-Button--block",
+      (disabled || loading) && "rl-Button--disabled",
+      loading && "rl-Button--loading",
+      className
+    ].filter(Boolean).join(" ");
+    return /* @__PURE__ */ jsxRuntime.jsxs(
+      "button",
+      {
+        ref,
+        className: classes,
+        disabled: disabled || loading,
+        ...rest,
+        children: [
+          leftIcon && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "rl-Button__icon", children: leftIcon }),
+          /* @__PURE__ */ jsxRuntime.jsx("span", { className: "rl-Button__content", children }),
+          rightIcon && /* @__PURE__ */ jsxRuntime.jsx("span", { className: "rl-Button__icon", children: rightIcon }),
+          loading && /* @__PURE__ */ jsxRuntime.jsx(
+            "span",
+            {
+              className: "rl-Button__spinner",
+              role: "status",
+              "aria-live": "polite",
+              "aria-label": loadingLabel
+            }
+          )
+        ]
+      }
+    );
+  }
+);
+Button.displayName = "Button";
+
+exports.Button = Button;
+//# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map
