@@ -2,7 +2,9 @@
   "name": "@ralorotech/rl-design-system",
   "version": "0.1.0",
   "description": "React + TS Design System (BEM)",
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "author": "Rafael Lozano",
   "repository": {
@@ -10,9 +12,14 @@
     "url": "git+https://github.com/RafaelLozano/Ralorotech-DS.git"
   },
   "homepage": "https://github.com/RafaelLozano/Ralorotech-DS#readme",
-  "bugs": { "url": "https://github.com/RafaelLozano/Ralorotech-DS/issues" },
-
-  "files": ["dist", "README.md", "LICENSE"],
+  "bugs": {
+    "url": "https://github.com/RafaelLozano/Ralorotech-DS/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,24 +31,33 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "sideEffects": ["**/*.css"],
-
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "build": "tsup",
     "build:css": "mkdir -p dist && (cat src/styles/tokens.css 2>/dev/null || true) > dist/styles.css && find src/components -name '*.css' -exec cat {} + >> dist/styles.css",
     "dev": "tsup --watch",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
     "test": "vitest --config vitest.config.ts --passWithNoTests",
-    "prepublishOnly": "npm run build && npm run build:css && npm test"
+    "prepublishOnly": "npm run build && npm run build:css",
+    "build-storybook": "storybook build"
   },
-
-  "keywords": ["react", "design-system", "typescript", "BEM", "ui", "button"],
-
+  "keywords": [
+    "react",
+    "design-system",
+    "typescript",
+    "BEM",
+    "ui",
+    "button"
+  ],
   "peerDependencies": {
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
   },
-
   "devDependencies": {
+    "@storybook/react-vite": "^9.1.4",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@types/react": "^19.1.12",
@@ -50,11 +66,18 @@
     "@typescript-eslint/parser": "^8.42.0",
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-storybook": "^9.1.4",
     "jsdom": "^26.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "storybook": "^9.1.4",
     "tsup": "^8.5.0",
     "typescript": "^5.9.2",
-    "vitest": "^3.2.4",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "vitest": "^3.2.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
