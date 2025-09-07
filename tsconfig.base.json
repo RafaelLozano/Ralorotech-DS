@@ -13,7 +13,6 @@
     "resolveJsonModule": true,
     "strict": true,
     "outDir": "dist",
-    "minify": true
   },
   "include": ["src"]
 }

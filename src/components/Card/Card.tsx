@@ -1,6 +1,6 @@
 import "./card.css";
 
-interface CardProps {
+export interface CardProps {
   title?: string;
   loading?: boolean;
   children?: React.ReactNode;
@@ -23,3 +23,5 @@ export const Card: React.FC<CardProps> = ({ title, loading = false, children }) 
     </div>
   );
 };
+
+Card.displayName = "Card";
