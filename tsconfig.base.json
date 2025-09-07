@@ -12,7 +12,8 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "strict": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "minify": true
   },
   "include": ["src"]
 }

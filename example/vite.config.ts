@@ -13,8 +13,5 @@ export default defineConfig({
     // permite acceder a archivos fuera de /example (tu DS)
     fs: { allow: [".."] },
   },
-  optimizeDeps: {
-    // evita que Vite pre-empaque el DS; así lo trata como "source" y hace HMR
-    exclude: ["@ralorotech/rl-design-system"],
-  },
+ optimizeDeps: { exclude: ["@ralorotech/rl-design-system"] }
 });

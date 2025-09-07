@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ralorotech/rl-design-system": "file:../ralorotech-rl-design-system-0.1.0.tgz",
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },
